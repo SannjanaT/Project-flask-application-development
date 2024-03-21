@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============--> 
+    <link rel="stylesheet" href="/static/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/static/styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.css">
+    
+    <title>Momentum Watches</title>
+    <style>
+        #error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+    </style>
+</head>
+
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+        <a href="/" class="nav__logo">
+            <i class='bx bxs-watch nav__logo-icon'></i> Momentum Watches
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/" class="nav__link active-link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#featured" class="nav__link">Featured</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#products" class="nav__link">Products</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#aboutus" class="nav__link">About Us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#new" class="nav__link">New</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/analytics" class="nav__link">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav__link" >Login</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a href="/signup" class="nav__link" >Sign Up</a>
+                </li>-->
+
+            </ul>
+
+            <div class="nav__close" id="nav-close">
+                <i class='bx bx-x' ></i>
+            </div>
+        </div>
+
+        <div class="nav__btns">
+            <!-- Theme change button -->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+            <div class="nav__shop" id="cart-shop">
+                <i class='bx bx-shopping-bag' ></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt' ></i>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+  <!--==================== CART ====================-->    
+  <div class="cart" id="cart">
+    <i class='bx bx-x cart__close' id="cart-close"></i>
+
+    <h2 class="cart__title-center">My Cart</h2>
+
+    <div class="cart__container">
+        <article class="cart__card">
+            <div class="cart__box">
+                <img src="/static/featured1.png" alt="" class="cart__img">
+            </div>
+
+            <div class="cart__details">
+                <h3 class="cart__title">Jazzmaster</h3>
+                <span class="cart__price">$1050</span>
+
+                <div class="cart__amount">
+                    <div class="cart__amount-content">
+                        <span class="cart__amount-box" onclick="decreaseItem(this)">
+                            <i class='bx bx-minus' ></i>
+                        </span>
+
+                        <span class="cart__amount-number">1</span>
+
+                        <span class="cart__amount-box" onclick="increaseItem(this)">
+                            <i class='bx bx-plus' ></i>
+                        </span>
+                    </div>
+
+                    <i class='bx bx-trash-alt cart__amount-trash' onclick="removeItem(this)"></i>
+                </div>
+            </div>
+        </article>
+
+        <!-- Repeat the same structure for the other items in the cart... -->
+        <article class="cart__card">
+            <div class="cart__box">
+                <img src="/static/product1.png" alt="" class="cart__img">
+            </div>
+
+            <div class="cart__details">
+                <h3 class="cart__title">LONGINES ROSE</h3>
+                <span class="cart__price">$980</span>
+
+                <div class="cart__amount">
+                    <div class="cart__amount-content">
+                        <span class="cart__amount-box" onclick="decreaseItem(this)">
+                            <i class='bx bx-minus' ></i>
+                        </span>
+
+                        <span class="cart__amount-number">1</span>
+
+                        <span class="cart__amount-box" onclick="increaseItem(this)">
+                            <i class='bx bx-plus' ></i>
+                        </span>
+                    </div>
+
+                    <i class='bx bx-trash-alt cart__amount-trash' onclick="removeItem(this)"></i>
+                </div>
+            </div>
+        </article>
+        <article class="cart__card">
+            <div class="cart__box">
+                <img src="/static/featured3.png" alt="" class="cart__img">
+            </div>
+
+            <div class="cart__details">
+                <h3 class="cart__title">ROSE GOLD</h3>
+                <span class="cart__price">$1890</span>
+
+                <div class="cart__amount">
+                    <div class="cart__amount-content">
+                        <span class="cart__amount-box" onclick="decreaseItem(this)">
+                            <i class='bx bx-minus' ></i>
+                        </span>
+
+                        <span class="cart__amount-number">1</span>
+
+                        <span class="cart__amount-box" onclick="increaseItem(this)">
+                            <i class='bx bx-plus' ></i>
+                        </span>
+                    </div>
+
+                    <i class='bx bx-trash-alt cart__amount-trash' onclick="removeItem(this)"></i>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="cart__prices">
+        <span class="cart__prices-item">3 items</span>
+        <span class="cart__prices-total">$3920</span>
+    </div>
+  </div>
+
+
+  <script>
+    function increaseItem(button) {
+        var amountNumber = button.parentNode.parentNode.querySelector(".cart__amount-number");
+        var price = button.parentNode.parentNode.parentNode.querySelector(".cart__price").innerHTML;
+        var pricesTotal = document.querySelector(".cart__prices-total");
+        var pricesTotalNumber = pricesTotal.innerHTML.replace("$", "");
+        amountNumber.innerHTML = parseInt(amountNumber.innerHTML) + 1;
+        pricesTotal.innerHTML = "$" + (parseInt(pricesTotalNumber) + parseInt(price.replace("$", "")));
+    }
+
+    function decreaseItem(button) {
+        var amountNumber = button.parentNode.parentNode.querySelector(".cart__amount-number");
+        var price = button.parentNode.parentNode.parentNode.querySelector(".cart__price").innerHTML;
+        var pricesTotal = document.querySelector(".cart__prices-total");
+        var pricesTotalNumber = pricesTotal.innerHTML.replace("$", "");
+        if (parseInt(amountNumber.innerHTML) > 1) {
+            amountNumber.innerHTML = parseInt(amountNumber.innerHTML) - 1;
+            pricesTotal.innerHTML = "$" + (parseInt(pricesTotalNumber) - parseInt(price.replace("$", "")));
+        }
+    }
+
+    function removeItem(button) {
+        var card = button.parentNode.parentNode.parentNode;
+        var price = card.querySelector(".cart__price").innerHTML;
+        var amountNumber = card.querySelector(".cart__amount-number").innerHTML;
+        var pricesTotal = document.querySelector(".cart__prices-total");
+        var pricesTotalNumber = pricesTotal.innerHTML.replace("$", "");
+        card.remove();
+        pricesTotal.innerHTML = "$" + (parseInt(pricesTotalNumber) - (parseInt(price.replace("$", "")) * parseInt(amountNumber)));
+        var cart = document.querySelector("#cart");
+        if (cart.querySelector(".cart__card") == null) {
+            // cart.innerHTML = "<p>Your cart is empty.</p>";
+
+        }
+    }
+  </script>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+         class="navbar-toggler-icon"></span>
+
+        </button>
+        </nav>
+      <div class="featured section container" id="analytics">
+        <h1 class="section__title">Analytics Page</h1>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+        <canvas id="salesChart1"></canvas>
+      </div>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+        <div class="footer__content">
+            <h3 class="footer__title">Our information</h3>
+
+            <ul class="footer__list">
+                <li>12734 - University Club Dr.</li>
+                <li>Tampa Florida 33612</li>
+            </ul>
+        </div>
+        <div class="footer__content">
+            <h3 class="footer__title">About Us</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a  class="footer__link">Support Center</a>
+                </li>
+                <li>
+                    <a class="footer__link">Customer Support</a>
+                </li>
+                <!--<li>
+                    <a href="#" class="footer__link">About Us</a>
+                </li>-->
+                <li class="nav__item">
+                    <a href="#aboutus" class="footer__link">About Us</a>
+                </li>
+                <li>
+                    <a class="footer__link">Copy Right</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Products</h3>
+
+            <ul class="footer__links">
+                <!--<li>
+                    <a href="#" class="footer__link">Luxury Watches</a>
+                </li>-->
+                <li class="nav__item">
+                    <a href="#products" class="footer__link">Luxury Watches</a>
+                </li>
+                <!--<li>
+                    <a href="#" class="footer__link">Smart Watches</a>
+                </li>-->
+                <li class="nav__item">
+                    <a href="#featured" class="footer__link">Smart Watches</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#new" class="footer__link">Latest Collections</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Social</h3>
+
+            <ul class="footer__social">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+
+                <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-twitter' ></i>
+                </a>
+
+                <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-instagram' ></i>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <span class="footer__copy">&#169; Momentum Luxury Watches. All rigths reserved</span>
+  </footer>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up"> 
+    <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+  </a>
+
+  <!--=============== SWIPER JS ===============-->
+  <script src="/static/swiper-bundle.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="/static/main.js"></script>
+
+  <script>
+    const emailInput = document.getElementById("email");
+    const errorMessage = document.getElementById("error-message");
+
+    emailInput.addEventListener("input", function() {
+        const email = emailInput.value.trim();
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (isValidEmail) {
+            errorMessage.style.display = "none";
+        } else {
+            errorMessage.textContent = "Please enter a valid email address";
+            errorMessage.style.display = "block";
+        }
+    });
+
+    function subscribe() {
+        const email = emailInput.value.trim();
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (isValidEmail) {
+            console.log("Email entered:", email);
+            errorMessage.style.display = "none";
+            alert("Thank you for subscribing!");
+            emailInput.value = '';
+
+        } else {
+            errorMessage.textContent = "Please enter a valid email address";
+            errorMessage.style.display = "block";
+        }
+    }
+  </script>
+
+
+      <script>
+        const data = {
+        labels: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+        ],
+        datasets: [
+        {
+          label: "Luxury Watches Monthly Sale",
+          data: [
+            1500, 1800, 2100, 1700, 1900, 1500, 3200, 3570, 2800, 4000, 7350,
+            4500,
+          ],
+          backgroundColor: "rgba(54, 162, 235, 0.2)",
+          borderColor: "rgba(54, 162, 235, 1)",
+          borderWidth: 1,
+        },
+        {
+          label: "Smart Watches Monthly Sale",
+          data: [
+            500, 770, 1700, 1790, 1813, 1521, 1412, 1570, 991, 2222, 5555, 1111,
+          ],
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 1,
+        },
+        ],
+        };
+
+        const config = {
+         type: "radar",
+        data: data,
+        options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+          },
+          title: {
+            display: true,
+            text: "Monthly Sales",
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+         },
+         };
+
+         const config1 = {
+         type: "line",
+        data: data,
+        options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+          },
+          title: {
+            display: true,
+            text: "Monthly Sales",
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+         },
+         };
+
+        var chartContainer = document.getElementById("chart-container");
+        var salesChart = new Chart(document.getElementById("salesChart"), config);
+        var salesChart1 = new Chart(document.getElementById("salesChart1"), config1);
+       
+        chartContainer.appendChild(salesChart.canvas);
+        chartContainer.appendChild(salesChart1.canvas);        
+      </script>
+
+</body>
+
+  
+</html>
